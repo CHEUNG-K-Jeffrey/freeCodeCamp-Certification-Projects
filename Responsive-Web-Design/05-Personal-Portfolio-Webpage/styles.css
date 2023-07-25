@@ -5,7 +5,7 @@
 }
 
 #navbar {
-  display:flex;
+  display: flex;
   position: sticky;
   top: 0px;
   width: 100%;
@@ -16,7 +16,7 @@
 #navbar a {
   font-size: 32px;
   color: silver;
-  padding:10px 0px;
+  padding: 10px 0px;
 }
 
 a {
@@ -36,7 +36,8 @@ a {
   text-align: center;
 }
 
-picture source, picture img {
+picture source,
+picture img {
   width: 100%;
 }
 
@@ -47,6 +48,7 @@ picture source, picture img {
   background: #BBBBBB;
   gap: 40px;
 }
+
 #projects .wrapper {
   display: flex;
   flex-direction: column;
@@ -82,21 +84,22 @@ h2 {
 }
 
 .fa-linkedin {
-  padding: 200px;    
+  padding: 200px;
 }
 
 @media (min-width: 600px) {
   #projects .wrapper {
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
-  
+
 
 @media (min-width: 1000px) {
   #projects .wrapper {
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
 }
