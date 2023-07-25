@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#navbar {
+  display:flex;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  justify-content: space-evenly;
+  background: #333333;
+}
+
+#navbar a {
+  font-size: 32px;
+  color: silver;
+  padding:10px 0px;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+#welcome-section {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+picture source, picture img {
+  width: 100%;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 60px;
+  background: #BBBBBB;
+  gap: 40px;
+}
+#projects .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  background: lightgrey;
+  border: solid black 1px;
+}
+
+#more-projects {
+  width: 150px;
+  height: 50px;
+}
+
+#profile {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+.fa-linkedin {
+  padding: 200px;    
+}
+
+@media (min-width: 600px) {
+  #projects .wrapper {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+  
+
+@media (min-width: 1000px) {
+  #projects .wrapper {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+}

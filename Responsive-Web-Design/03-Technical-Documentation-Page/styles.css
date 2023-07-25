@@ -1,0 +1,95 @@
+:root {
+  --background-color: #DDDDDD;
+  --code-container: #EEEEEE;
+  --border-color: black;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #EEEEEE;
+    --background-color: #222222;
+    --code-container: #444444;
+    --border-color: white;
+  }
+  a {
+    color: #00EEFF;
+  }
+}
+
+html {
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+header {
+  font-size: 25px;
+}
+
+code {
+  display:block;
+  background: var(--code-container);
+  
+}
+
+* {
+  box-sizing: inherit;
+  
+}
+
+img {
+  max-width:800px;
+  width: 100%;
+}
+
+#navbar a {
+  display:block;
+  border: 1px var(--border-color) solid;
+  height: 2rem;
+  font-size: 25px;
+}
+
+#main-doc {
+    margin: 2rem;
+    background: dark-grey;
+}
+
+#navbar header, #navbar a {
+  height: 50px;
+}
+
+#navbar header {
+  padding: 10px;
+  font-size: 30px;
+  vertical-align:center;
+}
+
+#navbar a {
+  padding: 10px;
+}
+
+.unsplash-license {
+  display:none;
+}
+
+@media (min-width: 800px) {
+  body {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #navbar {
+    margin: 0px;
+    position:sticky;
+    top:0;
+    width: 100%;
+    max-width: 250px;
+    flex-wrap: none;
+    flex-direction: column;
+    align-self: flex-start;
+  }
+}

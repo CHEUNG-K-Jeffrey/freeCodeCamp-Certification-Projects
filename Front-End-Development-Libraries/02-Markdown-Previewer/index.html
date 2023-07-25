@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Random Quote Machine</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-header">
+        Editor
+      </div>
+      <div class="card-body p-0">
+        <textarea id="editor"># Markdown Previewer&#13;&#10;## Features&#13;&#10;- Create links like [this](https://example.com).&#13;&#10;- Write inline `code`.&#13;&#10;- Create **bold** text&#13;&#10;- > Blockquote&#13;&#10;```&#13;&#10;Write block code&#13;&#10;here&#13;&#10;```&#13;&#10;![Image](https://images.unsplash.com/photo-1592727180315-b25c5246e5e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80)<span class="unsplash-license"><a target="_blank" href="https://unsplash.com/photos/9S2cUTtZcWk">Picture</a> by <a target="_blank" href="https://unsplash.com/@chmarco">Marco Chilese</a> is licensed under <a rel="license" href="https://unsplash.com/license">Unsplash License</a>.</span></textarea>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        Preview
+      </div>
+      <div id="preview" class="card-body p-0">
+      </div>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.12/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.3/purify.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

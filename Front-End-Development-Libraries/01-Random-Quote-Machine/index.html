@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Random Quote Machine</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="wrapper" class="d-flex container-fluid bg-secondary justify-content-center align-content-center flex-wrap">
+      <div id="quote-box" class="card">
+        <div class="card-header">
+          Random Quote Machine
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p id="text"></p>
+            <footer id="author" class="blockquote-footer"></footer>
+          </blockquote>
+        </div>
+        <div class="card-footer d-flex">
+          <a id="tweet-quote" target="_blank" href="https://twitter.com/intent/tweet">
+            <button type="button" class="btn btn-primary"><i class="fa-brands fa-twitter"></i></button>
+          </a>
+          <button id="new-quote" type="button" class="btn btn-primary ms-auto">Next Quote</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

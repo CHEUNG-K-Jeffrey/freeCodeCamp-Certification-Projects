@@ -1,0 +1,35 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    background:#222222;
+    color: #EEEEEE;
+  }
+  a {
+    color: #00DDFF;
+  }
+}
+
+img {
+  display: block;
+}
+
+#image {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+figcaption {
+  text-align: center;
+}
+
+.unsplash-license {
+  display:none;
+}

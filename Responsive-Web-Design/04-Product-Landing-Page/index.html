@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./styles.css">
+  <title>Acme Pet Toy Store</title>
+</head>
+
+<body>
+  <header id="header">
+    <picture id="header-picture">
+      <img id="header-img" src="https://images.unsplash.com/photo-1635241161466-541f065683ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80">
+      <span class="unsplash-license"><a target="_blank" href="https://unsplash.com/photos/9-dkDEXWGzI">Picture</a> by <a target="_blank" href="https://unsplash.com/@cdd20">愚木混株 cdd20</a> is licensed under <a rel="license" href="https://unsplash.com/license">Unsplash License</a>.</span>
+    </picture>
+    <span id="header-name">Metaverse Pet Store</span>
+    <nav id="nav-bar">
+      <ul>
+        <li><a class="nav-link" href="#header">Home</a></li>
+        <li><a class="nav-link" href="#features">Features</a></li>
+        <li><a class="nav-link" href="#how_it_works">How It Works</a></li>
+        <li><a class="nav-link" href="#pricing">Pricing</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="content">
+    <div class="section">
+      <h2 id="features">Features</h2>
+      <div class="feature">
+        <h3>Pets in the Metaverse</h3>
+        <p>Now your new furry companion can be in the metaverse too.</p>
+      </div>
+      <div class="feature">
+        <h3>Zero-Day Shipping</h3>
+        <p>With the power of the metaverse, instantly ship to your mailbox in the metaverse.</p>
+      </div>
+      <div class="feature">
+        <h3>Quality Assured</h3>
+        <p>With the power of the metaverse, the quality is guaranteed.</p>
+      </div>
+    </div>
+    <div id="how_it_works">
+      <h2>How it works</h2>
+      <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/o9hB2F-Fi24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <h2>Pricing</h2>
+    <div id="pricing">
+      <div class="item">
+        <i class="fa-solid fa-dog item-image"></i>
+        <p class="text-center">
+        Pet in the metaverse
+        </p>
+        <button class="price"><i class="fa-solid fa-shopping-cart"></i> $99.95</button>
+      </div>
+      <div class="item">
+        <i class="fa-solid fa-bone item-image"></i>
+        <p class="text-center">
+        Pet Toy in the metaverse
+        </p>
+        <button class="price"><i class="fa-solid fa-shopping-cart"></i> $99.95</button>
+      </div>
+      <div class="item">
+        <i class="fa-solid fa-bowl-food item-image"></i>
+        <p class="text-center">
+          Pet Food in the metaverse</p>
+        <button class="price"><i class="fa-solid fa-shopping-cart"></i> $99.95</button>
+      </div>
+    </div>
+    <form action="https://www.freecodecamp.com/email-submit" id="form">
+      <p>Subscribe to our newsletter for more news about our pet store.</p>
+      <input name="email" id="email" type="email" placeholder="Enter your email" />
+      <input id="submit" type="submit" method="post">
+    </form>
+  </div>
+</body>
+
+</html>

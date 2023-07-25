@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cat Survey Form</title>
+  </head>
+  <body>
+    <div id="summary">
+      <h1 id="title">Cat Survey Form</h1>
+      <p id="description">Thank you for your important feedback.</p>
+    </div>
+    <form id="survey-form">
+      <fieldset>
+        <label id="name-label" for="name">Name: <input id="name" name="name" type="text" placeholder="Please enter your name" required></label>
+        <label id="email-label" for="email">Email: <input id="email" name="email" type="email" placeholder="Please enter your email" required></label>
+        <label id="number-label" for="number">Age: (optional)<input id="number" name="number" type="number" min="13" max="120" placeholder="Please enter your age"></label>
+      </fieldset>
+      <fieldset id="favorite-trait-cat-label" for="dropdown">
+        <legend>What do you like the most about cats?</legend>
+        <select id="dropdown" name="favorite-thing-about-cats">
+          <option value="">Please select an option</option>
+          <option value="cute">Cute</option>
+          <option value="fluffy">Fluffy</option>
+          <option value="meow">Meow</option>
+          <option value="education">Education</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Do you love cats?</legend>
+        <label class="option"><input type="radio" name="cat-preference" value="love"> I love cats</label>
+        <label class="option"><input type="radio" name="cat-preference" value="like"> I like cats</label>
+        <label class="option"><input type="radio" name="cat-preference" value="none"> I don't care about  cats</label>
+        <label class="option"><input type="radio" name="cat-preference" value="dislike"> I dislike cats</label>
+        <label class="option"><input type="radio" name="cat-preference" value="hate"> I hate cats</label>
+      </fieldset>
+      <fieldset>
+        <legend>What do you not like about cats?</legend>
+        <label class="option"><input type="checkbox" name="cat-issues" value="Litterbox">Litterbox</label>
+        <label class="option"><input type="checkbox" name="cat-issues" value="Allergies">Allergies</label>
+        <label class="option"><input type="checkbox" name="cat-issues" value="Biting/Scratching">Biting & scratching</label>
+        <label  class="option"><input type="checkbox" name="User Interface" value="Other">Other</label>
+      </fieldset>
+      <fieldset>
+      <label for="comments">Additional Comments:</label>
+      <textarea id="comments" name="comments" rows="10" cols="50"></textarea>
+      </fieldset>
+      <input id="submit" type="submit">
+    </form>
+  </body>
+</html>
