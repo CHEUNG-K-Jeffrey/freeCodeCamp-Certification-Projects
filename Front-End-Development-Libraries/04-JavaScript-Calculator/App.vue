@@ -11,7 +11,7 @@
     #calculator {
         background-color: white;
         border: 5px solid black;
-        border-radius: 25;
+        border-radius: 25px;
         width: 100%;
         height: 100vh;
     }
