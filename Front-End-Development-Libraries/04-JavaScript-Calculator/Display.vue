@@ -8,7 +8,7 @@
 
 <style>
     #display {
-        margin: 5vw;
+        margin: 5vh;
         border: 1px solid black;
         height: 15vh;
         text-align: right;
