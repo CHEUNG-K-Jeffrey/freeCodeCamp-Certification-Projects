@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import Display from './Display.vue'
+import KeyPad from './KeyPad.vue'
 
 const displayText = ref(0);
 
@@ -9,6 +10,7 @@ const displayText = ref(0);
 <template>
     <div id="calculator">
     <Display>{{ displayText }}</Display>
+    <KeyPad/>
     </div>
 </template>
 
