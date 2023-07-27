@@ -5,6 +5,11 @@ import KeyPad from './KeyPad.vue'
 
 const displayText = ref(0);
 
+function resetCalculator(){
+    displayText.value = 0;
+}
+
+
 </script>
 
 <template>
