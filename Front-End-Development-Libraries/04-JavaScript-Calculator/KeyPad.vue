@@ -1,5 +1,12 @@
+<script setup>
+import Key from './Key.vue'
+</script>
+
 <template>
-    <div id="keypad"></div>
+    <div id="keypad">
+        <Key />
+
+    </div>
 </template>
 
 <style>
