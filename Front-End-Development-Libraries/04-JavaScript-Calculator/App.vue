@@ -5,6 +5,10 @@ import KeyPad from './KeyPad.vue'
 
 const displayText = ref(0);
 
+function checkForLeadingZero(){
+
+}
+
 function resetCalculator(){
     displayText.value = 0;
 }
