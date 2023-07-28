@@ -7,7 +7,7 @@ function onClicked() {
 </script>
 
 <template>
-    <div @click="onClicked" :class="{key: true}"></div>
+    <div @click="onClicked" :class="{key: true}"><slot></slot></div>
 </template>
 
 <style>
