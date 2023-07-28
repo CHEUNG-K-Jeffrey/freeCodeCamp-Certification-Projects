@@ -12,7 +12,11 @@ function onClicked() {
 
 <style>
 .key {
+    display:flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid black;
+
 }
 
 .key:hover {
