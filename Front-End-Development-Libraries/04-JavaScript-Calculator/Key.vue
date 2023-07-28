@@ -13,7 +13,6 @@ function onClicked() {
 <style>
 .key {
     border: 1px solid black;
-    height: 50px;
 }
 
 .key:hover {
