@@ -1,13 +1,13 @@
 <script setup>
 import { ref } from 'vue'
-const test = ref("key");
+const isSelectable = ref(true);
 function onClicked() {
 
 }
 </script>
 
 <template>
-    <div @click="onClicked" :class="{key: true}"><slot></slot></div>
+    <div @click="onClicked" :class="{key: true, selectable: isSelectable}"><slot></slot></div>
 </template>
 
 <style>
@@ -19,11 +19,11 @@ function onClicked() {
     font-size: 2em;
 }
 
-.key:hover {
+.selectable:hover {
     background-color: grey;
 }
 
-.key:active {
+.selectable:active {
     background-color: green;
 }
 </style>
