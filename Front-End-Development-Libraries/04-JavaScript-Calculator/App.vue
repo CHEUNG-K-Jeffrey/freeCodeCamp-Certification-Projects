@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import Display from './Display.vue'
 import KeyPad from './KeyPad.vue'
 
