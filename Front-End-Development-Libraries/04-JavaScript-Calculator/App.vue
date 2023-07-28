@@ -4,7 +4,7 @@ import Display from './Display.vue'
 import KeyPad from './KeyPad.vue'
 
 const buffer = ref("");
-const displayText = ref(0);
+const displayText = ref("");
 
 watch(buffer, (newBuffer) => {
   displayText.value=newBuffer;
