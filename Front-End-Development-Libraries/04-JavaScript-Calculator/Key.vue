@@ -16,7 +16,7 @@ function onClicked() {
     align-items: center;
     justify-content: center;
     border: 1px solid black;
-
+    font-size: 2em;
 }
 
 .key:hover {
