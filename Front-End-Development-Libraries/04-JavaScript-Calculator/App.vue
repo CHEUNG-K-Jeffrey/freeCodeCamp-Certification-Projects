@@ -6,6 +6,10 @@ import KeyPad from './KeyPad.vue'
 const buffer = ref("");
 const displayText = ref(0);
 
+watch(buffer, (newBuffer) => {
+  displayText.value=newBuffer;
+})
+
 function checkForLeadingZero(){
 
 }
