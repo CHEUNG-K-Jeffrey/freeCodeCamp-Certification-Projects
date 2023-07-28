@@ -14,6 +14,11 @@ function checkForLeadingZero(){
 
 }
 
+function addToBuffer() {
+    buffer.value = buffer.value + "Z";
+}
+
+
 function resetCalculator(){
     displayText.value = 0;
 }
