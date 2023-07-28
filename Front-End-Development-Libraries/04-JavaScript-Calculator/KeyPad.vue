@@ -26,10 +26,10 @@ import Key from './Key.vue'
 
 <style>
 #keypad {
-    display:grid;
+    display: grid;
     margin: 5vh;
     border: 1px solid black;
     height: 70vh;
-
+    grid-template-columns: repeat(4, 1fr);
 }
 </style>
