@@ -7,7 +7,7 @@ const store = useCalculatorStore();
 
 <template>
     <div id="keypad">
-        <Key id="equals" keyName="="/>
+        <Key id="equals" keyName="=" type="calculate"/>
         <Key id="zero" keyName="0"/>
         <Key id="one" keyName="1"/>
         <Key id="two" keyName="2"/>
