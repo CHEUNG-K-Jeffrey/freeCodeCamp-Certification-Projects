@@ -17,7 +17,7 @@ export const useCalculatorStore = defineStore('calculator', {
             this.buffer = "CALCULATED";
         },
         reset() {
-            this.buffer = "";
+            this.buffer = "0";
         }
     },
 })
