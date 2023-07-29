@@ -10,8 +10,8 @@ export const useCalculatorStore = defineStore('calculator', {
         display: (state) => state.buffer,
     },
     actions: {
-        input() {
-            this.buffer += "Z";
+        input(string) {
+            this.buffer += string;
         },
         calculate() {
             this.buffer = "CALCULATED";
