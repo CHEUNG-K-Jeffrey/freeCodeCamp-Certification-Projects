@@ -1,5 +1,8 @@
 <script setup>
 import Key from './Key.vue'
+import { useCalculatorStore } from './stores/calculator.mjs'
+const store = useCalculatorStore();
+
 </script>
 
 <template>
@@ -20,7 +23,7 @@ import Key from './Key.vue'
         <Key id="multiply" keyName="*"/>
         <Key id="divide" keyName="/"/>
         <Key id="decimal" keyName="."/>
-        <Key id="clear" keyName="AC"/>
+        <Key id="clear" keyName="AC" type="reset"/>
     </div>
 </template>
 

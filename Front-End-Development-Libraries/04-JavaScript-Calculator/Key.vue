@@ -3,13 +3,18 @@ import { ref } from 'vue'
 import { useCalculatorStore } from './stores/calculator.mjs'
 
 const props = defineProps({
-  keyName: String
+  keyName: String,
+  type: String
 });
 const isSelectable = ref(true);
 const store = useCalculatorStore();
 
 function onClicked() {
-    store.input(this.props.keyName);
+    if (props.type == null) {
+        store.input(this.props.keyName);
+    } else {
+        store[props.type]();
+    }
 }
 </script>
 
