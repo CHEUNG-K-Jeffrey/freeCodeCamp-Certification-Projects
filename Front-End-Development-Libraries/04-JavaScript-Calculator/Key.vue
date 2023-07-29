@@ -2,16 +2,19 @@
 import { ref } from 'vue'
 import { useCalculatorStore } from './stores/calculator.mjs'
 
-
+const props = defineProps({
+  keyName: String
+});
 const isSelectable = ref(true);
 const store = useCalculatorStore();
+
 function onClicked() {
-    store.input();
+    store.input(this.props.keyName);
 }
 </script>
 
 <template>
-    <div @click="onClicked" :class="{key: true, selectable: isSelectable}"><slot></slot></div>
+    <div @click="onClicked()" :class="{key: true, selectable: isSelectable}">{{ keyName }}</div>
 </template>
 
 <style>

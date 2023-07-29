@@ -4,23 +4,23 @@ import Key from './Key.vue'
 
 <template>
     <div id="keypad">
-        <Key id="equals">=</Key>
-        <Key id="zero">0</Key>
-        <Key id="one">1</Key>
-        <Key id="two">2</Key>
-        <Key id="three">3</Key>
-        <Key id="four">4</Key>
-        <Key id="five">5</Key>
-        <Key id="six">6</Key>
-        <Key id="seven">7</Key>
-        <Key id="eight">8</Key>
-        <Key id="nine">9</Key>
-        <Key id="add">+</Key>
-        <Key id="subtract">-</Key>
-        <Key id="multiply">*</Key>
-        <Key id="divide">/</Key>
-        <Key id="decimal">.</Key>
-        <Key id="clear">AC</Key>
+        <Key id="equals" keyName="="/>
+        <Key id="zero" keyName="0"/>
+        <Key id="one" keyName="1"/>
+        <Key id="two" keyName="2"/>
+        <Key id="three" keyName="3"/>
+        <Key id="four" keyName="4"/>
+        <Key id="five" keyName="5"/>
+        <Key id="six" keyName="6"/>
+        <Key id="seven" keyName="7"/>
+        <Key id="eight" keyName="8"/>
+        <Key id="nine" keyName="9"/>
+        <Key id="add" keyName="+"/>
+        <Key id="subtract" keyName="-"/>
+        <Key id="multiply" keyName="*"/>
+        <Key id="divide" keyName="/"/>
+        <Key id="decimal" keyName="."/>
+        <Key id="clear" keyName="AC"/>
     </div>
 </template>
 
