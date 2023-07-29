@@ -7,7 +7,7 @@ import KeyPad from './KeyPad.vue'
 
 <template>
     <div id="calculator">
-    <Display>{{ displayText }}</Display>
+    <Display/>
     <KeyPad/>
     </div>
 </template>
