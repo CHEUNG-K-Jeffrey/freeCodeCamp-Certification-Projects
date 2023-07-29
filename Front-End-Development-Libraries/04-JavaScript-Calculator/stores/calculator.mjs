@@ -11,7 +11,11 @@ export const useCalculatorStore = defineStore('calculator', {
     },
     actions: {
         input(string) {
-            this.buffer += string;
+            if (this.buffer === "0") {
+                this.buffer = string;
+            } else {
+                this.buffer += string;
+            }
         },
         calculate() {
             this.buffer = "CALCULATED";
