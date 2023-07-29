@@ -1,9 +1,20 @@
 <script setup>
+import { ref, watch } from 'vue'
+import { useCalculatorStore } from './stores/calculator.mjs'
+
+// access the `store` variable anywhere in the component ✨
+const store = useCalculatorStore();
+const text = ref("");
+
+watch(store, (store, prevStore) => {
+  text.value = store.buffer;
+}
+)
 
 </script>
 
 <template>
-    <div id="display"></div>
+    <div id="display">{{ text }}</div>
 </template>
 
 <style>

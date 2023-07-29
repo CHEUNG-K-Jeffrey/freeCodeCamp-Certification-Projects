@@ -9,13 +9,18 @@
 
 <body>
     <div id="app"></div>
-    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>
+    <script src="https://unpkg.com/vue-demi"></script>
+    <script type="module" src="https://unpkg.com/@vue/devtools-api"></script>
+    <script src="https://unpkg.com/pinia"></script>
     <script>
 
         const options = {
             moduleCache: {
-                vue: Vue
+                vue: Vue,
+                "vue-demi": VueDemi,
+                pinia: Pinia
             },
             async getFile(url) {
 
@@ -36,6 +41,7 @@
 
         const { loadModule } = window['vue3-sfc-loader'];
 
+        const pinia = Pinia.createPinia();
         const app = Vue.createApp({
             components: {
                 'App': Vue.defineAsyncComponent(() => loadModule('./App.vue', options))
@@ -43,6 +49,7 @@
             template: '<App></App>'
         });
 
+        app.use(pinia);
         app.mount('#app');
 
     </script>

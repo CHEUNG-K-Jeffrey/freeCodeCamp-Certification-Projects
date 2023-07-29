@@ -3,7 +3,9 @@ import { defineStore } from 'pinia'
 
 export const useCalculatorStore = defineStore('calculator', {
     // other options...
-    state: () => ({ buffer: "" }),
+    state: () => {
+        return { buffer: "" }
+      },
     getters: {
         display: (state) => state.buffer,
     },

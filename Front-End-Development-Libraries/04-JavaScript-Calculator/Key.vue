@@ -1,8 +1,12 @@
 <script setup>
 import { ref } from 'vue'
-const isSelectable = ref(true);
-function onClicked() {
+import { useCalculatorStore } from './stores/calculator.mjs'
 
+
+const isSelectable = ref(true);
+const store = useCalculatorStore();
+function onClicked() {
+    store.input();
 }
 </script>
 
