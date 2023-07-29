@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div id="display"><slot></slot></div>
+    <div id="display"></div>
 </template>
 
 <style>

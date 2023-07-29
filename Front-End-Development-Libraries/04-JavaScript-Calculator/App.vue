@@ -1,28 +1,7 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import Display from './Display.vue'
 import KeyPad from './KeyPad.vue'
-
-const buffer = ref("0");
-const displayText = ref("0");
-
-watch(buffer, (newBuffer) => {
-  displayText.value=newBuffer;
-})
-
-function checkForLeadingZero(){
-
-}
-
-function addToBuffer() {
-    buffer.value = buffer.value + "Z";
-}
-
-
-function resetCalculator(){
-    displayText.value = 0;
-}
-
 
 </script>
 
