@@ -6,10 +6,10 @@ import { useCalculatorStore } from './stores/calculator.mjs'
 const store = useCalculatorStore();
 const text = ref("");
 
-text.value = store.buffer;
+text.value = store.display;
 
 watch(store, (store, prevStore) => {
-  text.value = store.buffer;
+  text.value = store.display;
 }
 )
 
