@@ -10,6 +10,7 @@ export const useCalculatorStore = defineStore('calculator', {
     },
     actions: {
         input(string) {
+            // Only numbers, decimals and operators are expected.
             let newBuffer = JSON.parse(this.buffer);
             newBuffer.push(string)
             this.buffer = JSON.stringify(newBuffer);
