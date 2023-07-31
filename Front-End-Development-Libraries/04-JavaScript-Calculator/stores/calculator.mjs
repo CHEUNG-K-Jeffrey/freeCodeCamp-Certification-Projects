@@ -57,26 +57,33 @@ export const useCalculatorStore = defineStore('calculator', () => {
         for (let i = 1; i < buffer.value.length; i++) {
             // Check for operations string
             if (typeof (buffer.value[i]) === "string") {
+                let nextNumber = buffer.value[i + 1];
                 // Check if there is number ahead
-                if (typeof (buffer.value[i + 1]) !== "number") {
+                if (typeof (nextNumber) !== "number") {
                     break;
                 }
 
                 let operations = buffer.value[i].split("");
                 let operator = operations[operations.length - 1];
 
+                // Handle negative operator
+                if (operator === "-" && operations.length >= 2) {
+                    operator = operations[operations.length - 2];
+                    nextNumber *= -1;
+                }
+
                 switch (operator) {
                     case "*":
-                        newBuffer = newBuffer * buffer.value[i + 1];
+                        newBuffer = newBuffer * nextNumber;
                         break;
                     case "/":
-                        newBuffer = newBuffer / buffer.value[i + 1];
+                        newBuffer = newBuffer / nextNumber;
                         break;
                     case "+":
-                        newBuffer = newBuffer + buffer.value[i + 1];
+                        newBuffer = newBuffer + nextNumber;
                         break;
                     case "-":
-                        newBuffer = newBuffer - buffer.value[i + 1];
+                        newBuffer = newBuffer - nextNumber;
                         break;
                 }
 
