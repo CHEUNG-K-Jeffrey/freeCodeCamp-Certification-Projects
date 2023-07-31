@@ -6,7 +6,7 @@ export const useCalculatorStore = defineStore('calculator', () => {
     const display = computed(() => buffer.value.join(""))
     const buffer = ref(["0"]);
 
-    function input(string) {
+    function processUserInput(string) {
         let lastOffset = buffer.value.length - 1;
         //Process number
         if (/[0-9\.]/.test(string)) {
@@ -34,5 +34,5 @@ export const useCalculatorStore = defineStore('calculator', () => {
         buffer.value = ["0"];
     }
 
-    return { display, buffer, input, calculate, reset }
+    return { display, buffer, processUserInput, calculate, reset }
 })

@@ -11,7 +11,7 @@ const store = useCalculatorStore();
 
 function onClicked() {
     if (props.type == null) {
-        store.input(this.props.keyName);
+        store.processUserInput(this.props.keyName);
     } else {
         store[props.type]();
     }
