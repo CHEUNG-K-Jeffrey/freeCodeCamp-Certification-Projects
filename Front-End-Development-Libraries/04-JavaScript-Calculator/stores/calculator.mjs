@@ -15,31 +15,74 @@ export const useCalculatorStore = defineStore('calculator', () => {
                 buffer.value[lastOffset] = string;
                 return;
             }
-            //Check for decimal
+            //Check for decimal in number string
             if (string === ".") {
                 if (/\./.test(buffer.value[lastOffset]) === false) {
                     buffer.value[lastOffset] = buffer.value[lastOffset].concat(string);
                 }
                 return;
             }
-            // Check for operator in last string
+            // Check for operator in last string and handle according
             if (/[-+/*]/.test(buffer.value[lastOffset])) {
                 buffer.value.push(string);
             } else {
                 buffer.value[lastOffset] = buffer.value[lastOffset].concat(string);
             }
         } else if (/[-+=*/]/.test(string)) { //Handle operator
-            //Handle conversion to a number
+            //Handle conversion of number string to a number
             if (/[0-9\.]/.test(buffer.value[lastOffset])) {
                 buffer.value[lastOffset] = Number(buffer.value[lastOffset]);
             }
-            buffer.value.push(string);
+            //Detect if last string contains operations and handle it
+            if (/[-+=*]/.test(buffer.value[lastOffset])) {
+                buffer.value[lastOffset] = buffer.value[lastOffset].concat(string);
+            } else {
+                buffer.value.push(string);
+            }
         }
-        console.log(buffer.value);
+ 
     }
     function calculate() {
-        //Check for number only string and convert to number and compute
-        buffer.value = ["CALCULATED"];
+        let lastOffset = buffer.value.length - 1;
+        //Check if there is only a number
+        if (buffer.value.length === 1) {
+            return;
+        }
+        //Convert last number string to number
+        if (/[0-9\.]/.test(buffer.value[lastOffset])) {
+            buffer.value[lastOffset] = Number(buffer.value[lastOffset]);
+        }
+        let newBuffer = buffer.value[0];
+        //Traverse buffer look for operation string and perform operations whenever possible
+        for (let i = 1; i < buffer.value.length; i++) {
+            // Check for operations string
+            if (typeof (buffer.value[i]) === "string") {
+                // Check if there is number ahead
+                if (typeof (buffer.value[i + 1]) !== "number") {
+                    break;
+                }
+
+                let operations = buffer.value[i].split("");
+                let operator = operations[operations.length - 1];
+
+                switch (operator) {
+                    case "*":
+                        newBuffer = newBuffer * buffer.value[i + 1];
+                        break;
+                    case "/":
+                        newBuffer = newBuffer / buffer.value[i + 1];
+                        break;
+                    case "+":
+                        newBuffer = newBuffer + buffer.value[i + 1];
+                        break;
+                    case "-":
+                        newBuffer = newBuffer - buffer.value[i + 1];
+                        break;
+                }
+
+            }
+        }
+        buffer.value = [newBuffer.toString()];
     }
     function reset() {
         buffer.value = ["0"];
