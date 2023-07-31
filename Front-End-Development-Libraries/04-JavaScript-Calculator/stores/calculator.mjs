@@ -22,9 +22,20 @@ export const useCalculatorStore = defineStore('calculator', () => {
                 }
                 return;
             }
-            buffer.value[lastOffset] = buffer.value[lastOffset].concat(string);
+            // Check for operator in last string
+            if (/[-+/*]/.test(buffer.value[lastOffset])) {
+                buffer.value.push(string);
+            } else {
+                buffer.value[lastOffset] = buffer.value[lastOffset].concat(string);
+            }
+        } else if (/[-+=*/]/.test(string)) { //Handle operator
+            //Handle conversion to a number
+            if (/[0-9\.]/.test(buffer.value[lastOffset])) {
+                buffer.value[lastOffset] = Number(buffer.value[lastOffset]);
+            }
+            buffer.value.push(string);
         }
-
+        console.log(buffer.value);
     }
     function calculate() {
         //Check for number only string and convert to number and compute
