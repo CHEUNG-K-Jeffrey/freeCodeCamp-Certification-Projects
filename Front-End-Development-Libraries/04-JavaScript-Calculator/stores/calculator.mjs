@@ -3,7 +3,18 @@ import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useCalculatorStore = defineStore('calculator', () => {
-    const display = computed(() => buffer.value.join(""))
+    const display = computed(() => {
+        if (buffer.value.length >= 2 &&
+            buffer.value[0] === 0 &&
+            buffer.value[1] === "-"
+        ) {
+            let displayBuffer = [...buffer.value];
+            displayBuffer.shift();
+            return displayBuffer.join("");
+        } else {
+            return buffer.value.join("");
+        }
+    })
     const buffer = ref(["0"]);
 
     function processUserInput(string) {
@@ -40,7 +51,7 @@ export const useCalculatorStore = defineStore('calculator', () => {
                 buffer.value.push(string);
             }
         }
- 
+
     }
     function calculate() {
         let lastOffset = buffer.value.length - 1;
@@ -89,7 +100,12 @@ export const useCalculatorStore = defineStore('calculator', () => {
 
             }
         }
-        buffer.value = [newBuffer.toString()];
+        //Handle negative result
+        if (newBuffer < 0) {
+            buffer.value = [0, "-", (-1 * newBuffer).toString()]
+        } else {
+            buffer.value = [newBuffer.toString()];
+        }
     }
     function reset() {
         buffer.value = ["0"];
