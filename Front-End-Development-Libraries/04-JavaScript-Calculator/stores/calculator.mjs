@@ -41,11 +41,11 @@ export const useCalculatorStore = defineStore('calculator', () => {
             }
         } else if (/[-+=*/]/.test(string)) { //Handle operator
             //Handle conversion of number string to a number
-            if (/[0-9\.]/.test(buffer.value[lastOffset])) {
+            if (/Infinity|NaN|[0-9\.]/.test(buffer.value[lastOffset])) {
                 buffer.value[lastOffset] = Number(buffer.value[lastOffset]);
             }
             //Detect if last string contains operations and handle it
-            if (/[-+=*]/.test(buffer.value[lastOffset])) {
+            if (/[-+=*]$/.test(buffer.value[lastOffset])) {
                 buffer.value[lastOffset] = buffer.value[lastOffset].concat(string);
             } else {
                 buffer.value.push(string);
