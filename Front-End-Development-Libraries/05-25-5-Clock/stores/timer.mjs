@@ -11,7 +11,7 @@ export const useTimerStore = defineStore('timer', () => {
     const timerID = ref(0);
 
     function startTimer() {
-        if (timerId === 0) {
+        if (timerID.value === 0) {
             if (isSession) {
                 count.value = sessionTime.value;
             } else if (isBreak) {
