@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>25 + 5 Clock</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>
+    <script src="https://unpkg.com/vue-demi"></script>
+    <script type="module" src="https://unpkg.com/@vue/devtools-api"></script>
+    <script src="https://unpkg.com/pinia"></script>
+    <script>
+
+        const options = {
+            moduleCache: {
+                vue: Vue,
+                "vue-demi": VueDemi,
+                pinia: Pinia
+            },
+            async getFile(url) {
+
+                const res = await fetch(url);
+                if (!res.ok)
+                    throw Object.assign(new Error(res.statusText + ' ' + url), { res });
+                return {
+                    getContentData: asBinary => asBinary ? res.arrayBuffer() : res.text(),
+                }
+            },
+            addStyle(textContent) {
+
+                const style = Object.assign(document.createElement('style'), { textContent });
+                const ref = document.head.getElementsByTagName('style')[0] || null;
+                document.head.insertBefore(style, ref);
+            },
+        }
+
+        const { loadModule } = window['vue3-sfc-loader'];
+
+        const pinia = Pinia.createPinia();
+        const app = Vue.createApp({
+            components: {
+                'App': Vue.defineAsyncComponent(() => loadModule('./App.vue', options))
+            },
+            template: '<App></App>'
+        });
+
+        app.use(pinia);
+        app.mount('#app');
+
+    </script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
