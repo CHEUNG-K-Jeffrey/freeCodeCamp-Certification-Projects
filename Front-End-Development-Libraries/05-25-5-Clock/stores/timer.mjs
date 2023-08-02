@@ -11,18 +11,23 @@ export const useTimerStore = defineStore('timer', () => {
     const timerID = ref(0);
 
     function startTimer() {
-        if (isSession) {
-            count.value = sessionTime.value;
-        } else if (isBreak) {
-            count.value = breakTime.value;
+        if (timerId === 0) {
+            if (isSession) {
+                count.value = sessionTime.value;
+            } else if (isBreak) {
+                count.value = breakTime.value;
+            }
+            timerID.value = setTimeout(timer, 1000);
+    
+            console.log("Timer started.");
+        } else {
+            console.log("Timer is already running");
         }
-        timerID.value = setTimeout(timer, 1000);
-
-        console.log("Timer started.");
+        
     }
 
     function timer() {
-        if ( count.value > 1) {
+        if (count.value > 1) {
             count.value--;
             timerID.value = setTimeout(timer, 1000);
         } else if (count.value <= 1) {
@@ -30,7 +35,7 @@ export const useTimerStore = defineStore('timer', () => {
                 isSession.value = false;
                 isBreak.value = true;
                 count.value = breakTime.value;
-                
+
             } else if (isBreak.value) {
                 isSession.value = true;
                 isBreak.value = false;
@@ -44,7 +49,13 @@ export const useTimerStore = defineStore('timer', () => {
     }
 
     function pauseTimer() {
-
+        if (timerID.value > 0) {
+            clearTimeout(timerID.value);
+            timerID.value = 0;
+            console.log("Timer stopped");
+        } else {
+            consoler.log("Failed to pause timer?");
+        }
     }
 
     function resetTimer() {
