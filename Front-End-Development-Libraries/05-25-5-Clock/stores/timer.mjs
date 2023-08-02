@@ -5,8 +5,51 @@ import { defineStore } from 'pinia'
 export const useTimerStore = defineStore('timer', () => {
     const sessionTime = ref(20);
     const breakTime = ref(5);
-    const sessionCount = ref(20);
-    const breakCount = ref(5);
+    const isSession = ref(true);
+    const isBreak = ref(false);
+    const count = ref(20);
+    const timerID = ref(0);
+
+    function startTimer() {
+        if (isSession) {
+            count.value = sessionTime.value;
+        } else if (isBreak) {
+            count.value = breakTime.value;
+        }
+        timerID.value = setTimeout(timer, 1000);
+
+        console.log("Timer started.");
+    }
+
+    function timer() {
+        if ( count.value > 1) {
+            count.value--;
+            timerID.value = setTimeout(timer, 1000);
+        } else if (count.value <= 1) {
+            if (isSession.value) {
+                isSession.value = false;
+                isBreak.value = true;
+                count.value = breakTime.value;
+                
+            } else if (isBreak.value) {
+                isSession.value = true;
+                isBreak.value = false;
+                count.value = sessionTime.value;
+            }
+            timerID.value = setTimeout(timer, 1000);
+        }
+
+        console.log(`Count is: ${count.value}`);
+
+    }
+
+    function pauseTimer() {
+
+    }
+
+    function resetTimer() {
+
+    }
 
     function incrementSession() {
         if (sessionTime < 60) {
@@ -38,5 +81,5 @@ export const useTimerStore = defineStore('timer', () => {
         }
     }
 
-    return { seesionTime, breakTime, sessionCount, breakCount, incrementSession, decrementSession, incrementBreak, decrementBreak }
+    return { sessionTime, breakTime, count, startTimer, pauseTimer, timer, resetTimer, incrementSession, decrementSession, incrementBreak, decrementBreak }
 })

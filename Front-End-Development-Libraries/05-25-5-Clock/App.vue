@@ -2,7 +2,9 @@
 
 import { useTimerStore } from './stores/timer.mjs'
 
-var store = useTimerStore()
+const store = useTimerStore();
+
+store.startTimer();
 
 </script>
 
