@@ -18,12 +18,12 @@ export const useTimerStore = defineStore('timer', () => {
                 count.value = breakTime.value;
             }
             timerID.value = setTimeout(timer, 1000);
-    
+
             console.log("Timer started.");
         } else {
             console.log("Timer is already running");
         }
-        
+
     }
 
     function timer() {
@@ -31,7 +31,7 @@ export const useTimerStore = defineStore('timer', () => {
             count.value--;
             timerID.value = setTimeout(timer, 1000);
         } else if (count.value <= 1) {
-            switch(sessionType.value) {
+            switch (sessionType.value) {
                 case "session":
                     count.value = breakTime.value;
                     sessionType.value = "break";
@@ -93,5 +93,18 @@ export const useTimerStore = defineStore('timer', () => {
         }
     }
 
-    return { sessionTime, breakTime, sessionType, count, startTimer, pauseTimer, timer, resetTimer, incrementSession, decrementSession, incrementBreak, decrementBreak }
+    return {
+        sessionTime,
+        breakTime,
+        sessionType,
+        count,
+        startTimer,
+        pauseTimer,
+        timer,
+        resetTimer,
+        incrementSession,
+        decrementSession,
+        incrementBreak,
+        decrementBreak
+    }
 })
