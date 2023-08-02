@@ -5,16 +5,16 @@ import { defineStore } from 'pinia'
 export const useTimerStore = defineStore('timer', () => {
     const sessionTime = ref(20);
     const breakTime = ref(5);
-    const isSession = ref(true);
-    const isBreak = ref(false);
+    const sessionType = ref("session");
     const count = ref(20);
     const timerID = ref(0);
 
+
     function startTimer() {
         if (timerID.value === 0) {
-            if (isSession) {
+            if (sessionType.value === "session") {
                 count.value = sessionTime.value;
-            } else if (isBreak) {
+            } else if (sessionType.value === "break") {
                 count.value = breakTime.value;
             }
             timerID.value = setTimeout(timer, 1000);
@@ -31,15 +31,16 @@ export const useTimerStore = defineStore('timer', () => {
             count.value--;
             timerID.value = setTimeout(timer, 1000);
         } else if (count.value <= 1) {
-            if (isSession.value) {
-                isSession.value = false;
-                isBreak.value = true;
-                count.value = breakTime.value;
+            switch(sessionType.value) {
+                case "session":
+                    count.value = breakTime.value;
+                    sessionType.value = "break";
+                    break;
+                case "break":
+                    count.value = sessionTime.value;
+                    sessionType.value = "session";
+                    break;
 
-            } else if (isBreak.value) {
-                isSession.value = true;
-                isBreak.value = false;
-                count.value = sessionTime.value;
             }
             timerID.value = setTimeout(timer, 1000);
         }
@@ -63,34 +64,34 @@ export const useTimerStore = defineStore('timer', () => {
     }
 
     function incrementSession() {
-        if (sessionTime < 60) {
-            sessionTime++;
+        if (sessionTime.value < 60) {
+            sessionTime.value++;
         } else {
             return;
         }
     }
 
     function decrementSession() {
-        if (sessionTime > 1) {
-            sessionTime--;
+        if (sessionTime.value > 1) {
+            sessionTime.value--;
         } else {
             return;
         }
     }
 
     function incrementBreak() {
-        if (breakTime < 60) {
-            breakTime++;
+        if (breakTime.value < 60) {
+            breakTime.value++;
         } else {
             return;
         }
     }
 
     function decrementBreak() {
-        if (breakTime > 1) {
-            breakTime--;
+        if (breakTime.value > 1) {
+            breakTime.value--;
         }
     }
 
-    return { sessionTime, breakTime, count, startTimer, pauseTimer, timer, resetTimer, incrementSession, decrementSession, incrementBreak, decrementBreak }
+    return { sessionTime, breakTime, sessionType, count, startTimer, pauseTimer, timer, resetTimer, incrementSession, decrementSession, incrementBreak, decrementBreak }
 })
