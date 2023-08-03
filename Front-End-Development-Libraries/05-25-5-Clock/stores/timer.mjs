@@ -70,32 +70,32 @@ export const useTimerStore = defineStore('timer', () => {
     }
 
     function incrementSession() {
-        if (sessionTime.value < 60) {
-            sessionTime.value++;
+        if (sessionTime.value < 60*60) {
+            sessionTime.value += 60;
         } else {
             return;
         }
     }
 
     function decrementSession() {
-        if (sessionTime.value > 1) {
-            sessionTime.value--;
+        if (sessionTime.value > 60) {
+            sessionTime.value -=  60;
         } else {
             return;
         }
     }
 
     function incrementBreak() {
-        if (breakTime.value < 60) {
-            breakTime.value++;
+        if (breakTime.value < 60*60) {
+            breakTime.value += 60;
         } else {
             return;
         }
     }
 
     function decrementBreak() {
-        if (breakTime.value > 1) {
-            breakTime.value--;
+        if (breakTime.value > 60) {
+            breakTime.value -= 60;
         }
     }
 
