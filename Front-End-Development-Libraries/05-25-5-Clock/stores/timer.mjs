@@ -88,6 +88,7 @@ export const useTimerStore = defineStore('timer', () => {
     function incrementSession() {
         if (sessionTime.value < 60*60) {
             sessionTime.value += 60;
+            count.value = sessionTime.value;
         } else {
             return;
         }
@@ -96,6 +97,7 @@ export const useTimerStore = defineStore('timer', () => {
     function decrementSession() {
         if (sessionTime.value > 60) {
             sessionTime.value -=  60;
+            count.value = sessionTime.value;
         } else {
             return;
         }
