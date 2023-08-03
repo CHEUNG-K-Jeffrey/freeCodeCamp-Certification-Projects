@@ -37,10 +37,10 @@ export const useTimerStore = defineStore('timer', () => {
     }
 
     function timer() {
-        if (count.value > 1) {
+        if (count.value > 0) {
             count.value--;
             timerID.value = setTimeout(timer, 1000);
-        } else if (count.value <= 1) {
+        } else if (count.value <= 0) {
             switch (sessionType.value) {
                 case "session":
                     count.value = breakTime.value;
