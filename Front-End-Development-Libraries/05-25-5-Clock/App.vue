@@ -1,8 +1,9 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useTimerStore } from './stores/timer.mjs'
 
 const store = useTimerStore();
+const beep = ref();
 
 </script>
 
@@ -29,7 +30,7 @@ const store = useTimerStore();
         <div id="time-left">{{ store.timeLeft }}</div>
         <i id="start_stop" @click="store.toggleTimer" class="fa-solid" :class="{'fa-play': store.isPaused, 'fa-pause': !store.isPaused}"></i>
         <i id="reset" @click="store.resetTimer" class="fa-solid fa-stop"></i>
-
+        <audio controls ref="beep" id="beep" src="beep.mp3"></audio>
     </div>
 </template>
 
