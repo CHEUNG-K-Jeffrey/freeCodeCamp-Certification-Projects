@@ -27,8 +27,8 @@ const store = useTimerStore();
             Count
         </h2>
         <div id="time-left">{{ store.timeLeft }}</div>
-        <i @click="store.toggleTimer" class="fa-solid" :class="{'fa-play': store.isPaused, 'fa-pause': !store.isPaused}"></i>
-        <i @click="store.resetTimer" class="fa-solid fa-stop"></i>
+        <i id="start_stop" @click="store.toggleTimer" class="fa-solid" :class="{'fa-play': store.isPaused, 'fa-pause': !store.isPaused}"></i>
+        <i id="reset" @click="store.resetTimer" class="fa-solid fa-stop"></i>
 
     </div>
 </template>
