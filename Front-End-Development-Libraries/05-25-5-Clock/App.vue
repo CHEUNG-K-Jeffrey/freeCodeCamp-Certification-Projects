@@ -18,14 +18,15 @@ const store = useTimerStore();
         <h2 id="break-label">Break Length</h2>
         <i id="break-increment" @click="store.incrementBreak" class="fa-solid fa-chevron-up"></i>
         <div id="break-length">{{ store.breakTime }}</div>
-        <i id="break-decrement" @click="store.decrementBreak" class="fa-solid fa-chevron-down"></i>    </div>
+        <i id="break-decrement" @click="store.decrementBreak" class="fa-solid fa-chevron-down"></i>
+    </div>
     <div>
         <h2 id="timer-label">Current
             <span v-show="store.sessionType === 'session'">Session</span>
             <span v-show="store.sessionType === 'break'">Break</span>
             Count
         </h2>
-        {{ store.count }}
+        <div id="timer-length">{{ store.timeLeft }}</div>
     </div>
 </template>
 

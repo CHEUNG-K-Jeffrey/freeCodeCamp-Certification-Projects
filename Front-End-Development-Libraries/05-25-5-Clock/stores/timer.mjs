@@ -9,6 +9,12 @@ export const useTimerStore = defineStore('timer', () => {
     const count = ref(20);
     const timerID = ref(0);
 
+    const timeLeft = computed(() => {
+        let minutes = parseInt(count.value/60).toString().padStart(2,"0");
+        let seconds = parseInt(count.value % 60).toString().padStart(2,"0");
+        return `${minutes}:${seconds}`
+    });
+
 
     function startTimer() {
         if (timerID.value === 0) {
@@ -98,6 +104,7 @@ export const useTimerStore = defineStore('timer', () => {
         breakTime,
         sessionType,
         count,
+        timeLeft,
         startTimer,
         pauseTimer,
         timer,
