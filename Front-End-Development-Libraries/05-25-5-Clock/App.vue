@@ -12,16 +12,15 @@ store.startTimer();
     <h1>25 + 5 Clock</h1>
     <div>
         <h2 id="session-label">Session Length</h2>
+        <i class="fa-solid fa-chevron-up"></i>
         <div id="session-length">{{ store.sessionTime }}</div>
-        <div>UP</div>
-        <div>Down</div>
+        <i class="fa-solid fa-chevron-down"></i>
     </div>
     <div>
         <h2 id="break-label">Break Length</h2>
+        <i class="fa-solid fa-chevron-up"></i>
         <div id="break-length">{{ store.breakTime }}</div>
-        <div>UP</div>
-        <div>Down</div>
-    </div>
+        <i class="fa-solid fa-chevron-down"></i>    </div>
     <div>
         <h2 id="timer-label">Current
             <span v-show="store.sessionType === 'session'">Session</span>
