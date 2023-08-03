@@ -78,7 +78,11 @@ export const useTimerStore = defineStore('timer', () => {
     }
 
     function resetTimer() {
-
+        pauseTimer();
+        sessionTime.value = 25 * 60;
+        breakTime.value = 5 * 60;
+        count.value = sessionTime.value;
+        sessionType.value = "session";
     }
 
     function incrementSession() {

@@ -28,6 +28,8 @@ const store = useTimerStore();
         </h2>
         <div id="time-left">{{ store.timeLeft }}</div>
         <i @click="store.toggleTimer" class="fa-solid" :class="{'fa-play': store.isPaused, 'fa-pause': !store.isPaused}"></i>
+        <i @click="store.resetTimer" class="fa-solid fa-stop"></i>
+
     </div>
 </template>
 
