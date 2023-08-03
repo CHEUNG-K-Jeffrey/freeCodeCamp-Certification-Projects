@@ -6,7 +6,7 @@ export const useTimerStore = defineStore('timer', () => {
     const sessionTime = ref(25*60);
     const breakTime = ref(5*60);
     const sessionType = ref("session");
-    const count = ref(20);
+    const count = ref(25 * 60);
     const timerID = ref(0);
 
     const timeLeft = computed(() => {
