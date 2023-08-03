@@ -10,15 +10,15 @@ const store = useTimerStore();
     <h1>25 + 5 Clock</h1>
     <div>
         <h2 id="session-label">Session Length</h2>
-        <i @click="store.incrementSession" class="fa-solid fa-chevron-up"></i>
+        <i id="session-increment" @click="store.incrementSession" class="fa-solid fa-chevron-up"></i>
         <div id="session-length">{{ store.sessionTime }}</div>
-        <i @click="store.decrementSession" class="fa-solid fa-chevron-down"></i>
+        <i id="session-decrement" @click="store.decrementSession" class="fa-solid fa-chevron-down"></i>
     </div>
     <div>
         <h2 id="break-label">Break Length</h2>
-        <i @click="store.incrementBreak" class="fa-solid fa-chevron-up"></i>
+        <i id="break-increment" @click="store.incrementBreak" class="fa-solid fa-chevron-up"></i>
         <div id="break-length">{{ store.breakTime }}</div>
-        <i @click="store.decrementBreak" class="fa-solid fa-chevron-down"></i>    </div>
+        <i id="break-decrement" @click="store.decrementBreak" class="fa-solid fa-chevron-down"></i>    </div>
     <div>
         <h2 id="timer-label">Current
             <span v-show="store.sessionType === 'session'">Session</span>
