@@ -26,7 +26,7 @@ const store = useTimerStore();
             <span v-show="store.sessionType === 'break'">Break</span>
             Count
         </h2>
-        <div id="timer-length">{{ store.timeLeft }}</div>
+        <div id="time-left">{{ store.timeLeft }}</div>
     </div>
 </template>
 
