@@ -15,14 +15,18 @@ export const useTimerStore = defineStore('timer', () => {
         return `${minutes}:${seconds}`
     });
 
+    const isPaused = computed(() => {
+        if (timerID.value === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+
 
     function startTimer() {
-        if (timerID.value === 0) {
-            if (sessionType.value === "session") {
-                count.value = sessionTime.value;
-            } else if (sessionType.value === "break") {
-                count.value = breakTime.value;
-            }
+        if (count.value > 0) {
+            
             timerID.value = setTimeout(timer, 1000);
 
             console.log("Timer started.");
@@ -62,6 +66,14 @@ export const useTimerStore = defineStore('timer', () => {
             console.log("Timer stopped");
         } else {
             consoler.log("Failed to pause timer?");
+        }
+    }
+
+    function toggleTimer() {
+        if (isPaused.value) {
+            startTimer();
+        } else {
+            pauseTimer();
         }
     }
 
@@ -105,8 +117,10 @@ export const useTimerStore = defineStore('timer', () => {
         sessionType,
         count,
         timeLeft,
+        isPaused,
         startTimer,
         pauseTimer,
+        toggleTimer,
         timer,
         resetTimer,
         incrementSession,
