@@ -65,7 +65,7 @@ export const useTimerStore = defineStore('timer', () => {
             timerID.value = 0;
             console.log("Timer stopped");
         } else {
-            consoler.log("Failed to pause timer?");
+            console.log("Failed to pause timer?");
         }
     }
 
