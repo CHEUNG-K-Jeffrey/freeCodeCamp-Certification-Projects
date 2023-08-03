@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useTimerStore = defineStore('timer', () => {
-    const sessionTime = ref(20*60);
+    const sessionTime = ref(25*60);
     const breakTime = ref(5*60);
     const sessionType = ref("session");
     const count = ref(20);
