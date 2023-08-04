@@ -69,6 +69,10 @@ h1 {
     margin: 10px;
 }
 
+.button:hover {
+    cursor:pointer;
+}
+
 .text {
     display: inline;
     font-size: 3em;
