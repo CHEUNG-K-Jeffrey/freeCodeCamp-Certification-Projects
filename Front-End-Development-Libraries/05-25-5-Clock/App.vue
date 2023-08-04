@@ -47,6 +47,13 @@ h1 {
     text-align: center;
 }
 
+#clock {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+}
+
 #session-box,
 #break-box,
 #timer-box {
