@@ -12,15 +12,15 @@ const beep = ref();
     <div id="clock">
         <div id="session-box">
             <h2 id="session-label">Session Length</h2>
-            <i class="button" id="session-increment" @click="store.incrementSession" class="fa-solid fa-chevron-up"></i>
+            <i id="session-increment" @click="store.incrementSession" class="button fa-solid fa-chevron-up"></i>
             <div class="text" id="session-length">{{ store.sessionTime / 60 }}</div>
-            <i class="button" id="session-decrement" @click="store.decrementSession" class="fa-solid fa-chevron-down"></i>
+            <i id="session-decrement" @click="store.decrementSession" class="button fa-solid fa-chevron-down"></i>
         </div>
         <div id="break-box">
             <h2 id="break-label">Break Length</h2>
-            <i class="button" id="break-increment" @click="store.incrementBreak" class="fa-solid fa-chevron-up"></i>
+            <i id="break-increment" @click="store.incrementBreak" class="button fa-solid fa-chevron-up"></i>
             <div class="text" id="break-length">{{ store.breakTime / 60 }}</div>
-            <i class="button" id="break-decrement" @click="store.decrementBreak" class="fa-solid fa-chevron-down"></i>
+            <i id="break-decrement" @click="store.decrementBreak" class="button fa-solid fa-chevron-down"></i>
         </div>
         <div id="timer-box">
             <h2 id="timer-label">Current
@@ -29,9 +29,9 @@ const beep = ref();
                 Count
             </h2>
             <div id="time-left">{{ store.timeLeft }}</div>
-            <i class="button" id="start_stop" @click="store.toggleTimer" class="fa-solid"
+            <i id="start_stop" @click="store.toggleTimer" class="button fa-solid"
                 :class="{ 'fa-play': store.isPaused, 'fa-pause': !store.isPaused }"></i>
-            <i class="button" id="reset" @click="store.resetTimer" class="fa-solid fa-stop"></i>
+            <i id="reset" @click="store.resetTimer" class="button fa-solid fa-stop"></i>
             <audio ref="beep" id="beep" src="beep.mp3"></audio>
         </div>
     </div>
