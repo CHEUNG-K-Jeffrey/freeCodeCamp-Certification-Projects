@@ -35,6 +35,11 @@ const beep = ref();
 </template>
 
 <style>
+    body {
+        background-color:rgb(87, 160, 243);
+        color: rgb(241, 243, 250)
+    }
+
     h1 {
         text-align: center;
     }
