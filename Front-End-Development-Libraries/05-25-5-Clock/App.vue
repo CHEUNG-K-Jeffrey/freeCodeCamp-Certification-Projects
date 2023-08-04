@@ -47,6 +47,10 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-size: 2em;
+}
+
 #clock {
     display:flex;
     flex-direction: column;
@@ -62,6 +66,10 @@ h1 {
     border-radius: 25px;
 
 
+}
+
+#time-left {
+    font-size: 3em;
 }
 
 .button {
