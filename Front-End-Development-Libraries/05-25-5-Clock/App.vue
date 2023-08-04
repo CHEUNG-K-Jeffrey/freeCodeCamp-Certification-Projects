@@ -13,13 +13,13 @@ const beep = ref();
         <div id="session-box">
             <h2 id="session-label">Session Length</h2>
             <i class="button" id="session-increment" @click="store.incrementSession" class="fa-solid fa-chevron-up"></i>
-            <div id="session-length">{{ store.sessionTime / 60 }}</div>
+            <div class="text" id="session-length">{{ store.sessionTime / 60 }}</div>
             <i class="button" id="session-decrement" @click="store.decrementSession" class="fa-solid fa-chevron-down"></i>
         </div>
         <div id="break-box">
             <h2 id="break-label">Break Length</h2>
             <i class="button" id="break-increment" @click="store.incrementBreak" class="fa-solid fa-chevron-up"></i>
-            <div id="break-length">{{ store.breakTime / 60 }}</div>
+            <div class="text" id="break-length">{{ store.breakTime / 60 }}</div>
             <i class="button" id="break-decrement" @click="store.decrementBreak" class="fa-solid fa-chevron-down"></i>
         </div>
         <div id="timer-box">
@@ -65,6 +65,12 @@ h1 {
 }
 
 .button {
+    font-size: 3em;
+    margin: 10px;
+}
+
+.text {
+    display: inline;
     font-size: 3em;
 }
 
