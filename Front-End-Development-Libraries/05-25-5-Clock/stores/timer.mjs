@@ -8,6 +8,7 @@ export const useTimerStore = defineStore('timer', () => {
     const sessionType = ref("session");
     const count = ref(25 * 60);
     const timerID = ref(0);
+    const isFirstRun = ref(true);
 
     const timeLeft = computed(() => {
         let minutes = parseInt(count.value/60).toString().padStart(2,"0");
@@ -41,6 +42,7 @@ export const useTimerStore = defineStore('timer', () => {
             count.value--;
             timerID.value = setTimeout(timer, 1000);
         } else if (count.value <= 0) {
+            this.beep.play()
             switch (sessionType.value) {
                 case "session":
                     count.value = breakTime.value;
@@ -70,6 +72,10 @@ export const useTimerStore = defineStore('timer', () => {
     }
 
     function toggleTimer() {
+        if(isFirstRun.value) {
+            beep.play();
+            isFirstRun.value = false;
+        }
         if (isPaused.value) {
             startTimer();
         } else {
@@ -79,6 +85,8 @@ export const useTimerStore = defineStore('timer', () => {
 
     function resetTimer() {
         pauseTimer();
+        beep.pause();
+        beep.currentTime = 0.0;
         sessionTime.value = 25 * 60;
         breakTime.value = 5 * 60;
         count.value = sessionTime.value;
