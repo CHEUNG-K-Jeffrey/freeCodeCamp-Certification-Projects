@@ -62,7 +62,7 @@ h2 {
 #break-box,
 #timer-box {
     text-align: center;
-    border: 1px solid rgb(241, 243, 250);
+    border: 3px solid rgb(241, 243, 250);
     border-radius: 25px;
 
 
