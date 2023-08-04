@@ -9,19 +9,19 @@ const beep = ref();
 
 <template>
     <h1>25 + 5 Clock</h1>
-    <div>
+    <div id="session-box">
         <h2 id="session-label">Session Length</h2>
         <i id="session-increment" @click="store.incrementSession" class="fa-solid fa-chevron-up"></i>
         <div id="session-length">{{ store.sessionTime / 60 }}</div>
         <i id="session-decrement" @click="store.decrementSession" class="fa-solid fa-chevron-down"></i>
     </div>
-    <div>
+    <div id="break-box">
         <h2 id="break-label">Break Length</h2>
         <i id="break-increment" @click="store.incrementBreak" class="fa-solid fa-chevron-up"></i>
         <div id="break-length">{{ store.breakTime / 60 }}</div>
         <i id="break-decrement" @click="store.decrementBreak" class="fa-solid fa-chevron-down"></i>
     </div>
-    <div>
+    <div id="timer-box">
         <h2 id="timer-label">Current
             <span v-show="store.sessionType === 'session'">Session</span>
             <span v-show="store.sessionType === 'break'">Break</span>
@@ -30,8 +30,16 @@ const beep = ref();
         <div id="time-left">{{ store.timeLeft }}</div>
         <i id="start_stop" @click="store.toggleTimer" class="fa-solid" :class="{'fa-play': store.isPaused, 'fa-pause': !store.isPaused}"></i>
         <i id="reset" @click="store.resetTimer" class="fa-solid fa-stop"></i>
-        <audio controls ref="beep" id="beep" src="beep.mp3"></audio>
+        <audio ref="beep" id="beep" src="beep.mp3"></audio>
     </div>
 </template>
 
-<style></style>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    #session-box, #break-box, #timer-box {
+        text-align: center;
+    }
+</style>
